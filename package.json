@@ -1,0 +1,24 @@
+{
+    "name": "triviaai",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "seed:firestore": "node seed-firestore.js",
+        "checks:high-value": "node scripts/high-value-checks.js",
+        "checks:serve": "node scripts/localhost-check-server.js",
+        "app:dev": "npm --prefix web run dev -- --host 0.0.0.0 --port 5173 --strictPort",
+        "app:build": "npm run build --prefix web"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "firebase-admin": "^13.7.0"
+    },
+    "devDependencies": {
+        "firebase-tools": "^15.8.0"
+    }
+}

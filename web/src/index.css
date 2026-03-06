@@ -1,0 +1,114 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f2937;
+  background: linear-gradient(145deg, #f3f4f6, #e5e7eb);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(760px, 100%);
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(31, 41, 55, 0.08);
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 26px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 12px 0 16px;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  background: #0f766e;
+  color: #fff;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.questionBox {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+}
+
+.options {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.mediaImage,
+.mediaVideo {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  margin: 8px 0;
+}
+
+.mediaAudio {
+  width: 100%;
+  margin: 8px 0;
+}
+
+.mediaCaption,
+.mediaTranscript {
+  margin: 2px 0 10px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.option {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.msg {
+  margin-top: 16px;
+  white-space: pre-wrap;
+  background: #0b1020;
+  color: #d1fae5;
+  border-radius: 8px;
+  padding: 12px;
+}

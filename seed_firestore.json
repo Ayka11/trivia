@@ -1,0 +1,799 @@
+{
+    "modes":  [
+                  {
+                      "id":  "relaxed",
+                      "name":  "Relaxed",
+                      "enabled":  true,
+                      "rules":  {
+                                    "solveTimeTargetEnabled":  false,
+                                    "timerVisible":  false,
+                                    "autoSubmitOnTimeout":  false,
+                                    "hintsEnabled":  true,
+                                    "maxHintsPerQuestion":  3,
+                                    "attemptLimit":  0,
+                                    "showExplanationAfterAnswer":  true,
+                                    "difficultyAdaptive":  false,
+                                    "multimediaEnabled":  true
+                                },
+                      "scoring":  {
+                                      "baseCorrectCoins":  20,
+                                      "speedBonusEnabled":  false,
+                                      "wrongAnswerPenaltyCoins":  0,
+                                      "streakBonusEnabled":  true
+                                  },
+                      "economy":  {
+                                      "dailyCoinCap":  250,
+                                      "hintDefaultCost":  50
+                                  },
+                      "updatedAt":  "2026-03-05T00:00:00.000Z"
+                  },
+                  {
+                      "id":  "standard",
+                      "name":  "Standard",
+                      "enabled":  true,
+                      "rules":  {
+                                    "solveTimeTargetEnabled":  true,
+                                    "solveTimeSeconds":  75,
+                                    "timerVisible":  true,
+                                    "autoSubmitOnTimeout":  true,
+                                    "hintsEnabled":  true,
+                                    "maxHintsPerQuestion":  2,
+                                    "attemptLimit":  1,
+                                    "showExplanationAfterAnswer":  true,
+                                    "difficultyAdaptive":  true,
+                                    "multimediaEnabled":  true
+                                },
+                      "scoring":  {
+                                      "baseCorrectCoins":  25,
+                                      "speedBonusEnabled":  true,
+                                      "speedBonusMaxCoins":  10,
+                                      "wrongAnswerPenaltyCoins":  0,
+                                      "streakBonusEnabled":  true
+                                  },
+                      "economy":  {
+                                      "dailyCoinCap":  350,
+                                      "hintDefaultCost":  60
+                                  },
+                      "updatedAt":  "2026-03-05T00:00:00.000Z"
+                  },
+                  {
+                      "id":  "ranked",
+                      "name":  "Ranked",
+                      "enabled":  true,
+                      "rules":  {
+                                    "solveTimeTargetEnabled":  true,
+                                    "solveTimeSeconds":  45,
+                                    "timerVisible":  true,
+                                    "autoSubmitOnTimeout":  true,
+                                    "hintsEnabled":  false,
+                                    "attemptLimit":  1,
+                                    "showExplanationAfterAnswer":  false,
+                                    "difficultyAdaptive":  true,
+                                    "multimediaEnabled":  false
+                                },
+                      "scoring":  {
+                                      "baseCorrectCoins":  35,
+                                      "speedBonusEnabled":  true,
+                                      "speedBonusMaxCoins":  20,
+                                      "wrongAnswerPenaltyCoins":  -5,
+                                      "streakBonusEnabled":  true
+                                  },
+                      "economy":  {
+                                      "dailyCoinCap":  500,
+                                      "entryFeeCoins":  100,
+                                      "hintDefaultCost":  0
+                                  },
+                      "updatedAt":  "2026-03-05T00:00:00.000Z"
+                  },
+                  {
+                      "id":  "multimedia_challenge",
+                      "name":  "Multimedia Challenge",
+                      "enabled":  true,
+                      "rules":  {
+                                    "solveTimeTargetEnabled":  true,
+                                    "solveTimeSeconds":  90,
+                                    "timerVisible":  true,
+                                    "autoSubmitOnTimeout":  true,
+                                    "hintsEnabled":  true,
+                                    "maxHintsPerQuestion":  1,
+                                    "attemptLimit":  1,
+                                    "showExplanationAfterAnswer":  true,
+                                    "difficultyAdaptive":  false,
+                                    "multimediaEnabled":  true
+                                },
+                      "scoring":  {
+                                      "baseCorrectCoins":  30,
+                                      "speedBonusEnabled":  true,
+                                      "speedBonusMaxCoins":  15,
+                                      "wrongAnswerPenaltyCoins":  0,
+                                      "streakBonusEnabled":  true
+                                  },
+                      "economy":  {
+                                      "dailyCoinCap":  400,
+                                      "hintDefaultCost":  70
+                                  },
+                      "updatedAt":  "2026-03-05T00:00:00.000Z"
+                  }
+              ],
+    "shopPacks":  [
+                      {
+                          "id":  "coins_400",
+                          "name":  "400 Coins",
+                          "coinsAmount":  400,
+                          "bonusCoins":  0,
+                          "price":  1.99,
+                          "currency":  "USD",
+                          "active":  true
+                      },
+                      {
+                          "id":  "coins_1200",
+                          "name":  "1200 Coins + Bonus",
+                          "coinsAmount":  1200,
+                          "bonusCoins":  200,
+                          "price":  4.99,
+                          "currency":  "USD",
+                          "active":  true
+                      },
+                      {
+                          "id":  "coins_3000",
+                          "name":  "3000 Coins + Big Bonus",
+                          "coinsAmount":  3000,
+                          "bonusCoins":  700,
+                          "price":  9.99,
+                          "currency":  "USD",
+                          "active":  true
+                      }
+                  ],
+    "questions":  [
+                      {
+                          "id":  "q001",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "deduction",
+                          "packId":  "starter_logic",
+                          "difficulty":  "medium",
+                          "tags":  [
+                                       "labels",
+                                       "elimination"
+                                   ],
+                          "prompt":  "Three boxes are labeled Apples, Oranges, and Mixed. Every label is wrong. You draw one apple from the box labeled Apples. Which box is actually Mixed?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "Box labeled Oranges"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "Box labeled Apples"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "Box labeled Mixed"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Cannot be determined"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "B"
+                                                              ]
+                                            },
+                          "explanation":  "Since labels are all wrong, the Apples-labeled box cannot be apples. Drawing an apple means it must be Mixed.",
+                          "rewardCoins":  25,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q002",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "lateral",
+                          "packId":  "starter_logic",
+                          "difficulty":  "medium",
+                          "tags":  [
+                                       "truth-lie"
+                                   ],
+                          "prompt":  "Two guards: one always lies, one always tells truth. One door is safe. What should you ask either guard?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "Which door is safe?"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "Which door would the other guard say is safe? Then pick that door."
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "Which door would the other guard say is safe? Then pick the opposite door."
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Are you the truthful guard?"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "C"
+                                                              ]
+                                            },
+                          "explanation":  "Both guards point to the wrong door for that question; choose the opposite.",
+                          "rewardCoins":  25,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q003",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "pattern",
+                          "packId":  "starter_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "sequence"
+                                   ],
+                          "prompt":  "Find the next number: 2, 6, 12, 20, 30, ?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "36"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "40"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "42"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "44"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "C"
+                                                              ]
+                                            },
+                          "explanation":  "Pattern is n(n+1): 1*2,2*3,3*4... next is 6*7=42.",
+                          "rewardCoins":  20,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q004",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "pattern",
+                          "packId":  "starter_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "letters"
+                                   ],
+                          "prompt":  "Complete the pair pattern: AZ, BY, CX, ?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "DU"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "DW"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "EV"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "DX"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "B"
+                                                              ]
+                                            },
+                          "explanation":  "First letter moves forward, second moves backward: A-Z, B-Y, C-X, D-W.",
+                          "rewardCoins":  20,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q005",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "syllogism",
+                          "packId":  "starter_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "logic"
+                                   ],
+                          "prompt":  "All glibs are trons. No tron is a flarp. Which must be true?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "Some flarps are glibs"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "No glib is a flarp"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "All trons are glibs"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Some trons are flarps"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "B"
+                                                              ]
+                                            },
+                          "explanation":  "If all glibs are trons and no tron is flarp, glibs cannot be flarps.",
+                          "rewardCoins":  20,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q006",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "conditional",
+                          "packId":  "starter_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "and-or"
+                                   ],
+                          "prompt":  "To enter, you need a badge and (PIN or fingerprint). Mia has only a badge. Can she enter?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "Yes"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "No"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "Only on weekends"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Cannot be determined"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "B"
+                                                              ]
+                                            },
+                          "explanation":  "Badge alone fails the PIN/fingerprint condition.",
+                          "rewardCoins":  20,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q007",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "word_logic",
+                          "packId":  "starter_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "riddle"
+                                   ],
+                          "prompt":  "You see me once in June, twice in November, and not at all in May. What am I?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "The letter E"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "The moon"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "The letter N"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Rain"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "A"
+                                                              ]
+                                            },
+                          "explanation":  "It counts letter appearances in month names.",
+                          "rewardCoins":  20,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q008",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "deduction",
+                          "packId":  "starter_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "ordering"
+                                   ],
+                          "prompt":  "Ana is left of Ben. Cara is right of Ben. Who is in the middle?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "Ana"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "Ben"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "Cara"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Cannot be determined"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "B"
+                                                              ]
+                                            },
+                          "explanation":  "Only order fitting both clues is Ana-Ben-Cara.",
+                          "rewardCoins":  20,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q009",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "pattern",
+                          "packId":  "starter_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "sequence"
+                                   ],
+                          "prompt":  "Next number: 3, 9, 27, 81, ?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "162"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "243"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "324"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "729"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "B"
+                                                              ]
+                                            },
+                          "explanation":  "Multiply by 3 each step.",
+                          "rewardCoins":  20,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q010",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "word_logic",
+                          "packId":  "starter_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "anagram"
+                                   ],
+                          "prompt":  "Which word is an anagram of LISTEN?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "TINSEL"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "SILKENT"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "LISTER"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "INLETSX"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "A"
+                                                              ]
+                                            },
+                          "explanation":  "TINSEL uses exactly the same letters.",
+                          "rewardCoins":  20,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q011",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "deduction",
+                          "packId":  "starter_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "comparison"
+                                   ],
+                          "prompt":  "Tom is older than Raj. Raj is older than Mei. Who is youngest?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "Tom"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "Raj"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "Mei"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Cannot be determined"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "C"
+                                                              ]
+                                            },
+                          "explanation":  "Age order is Tom \u003e Raj \u003e Mei.",
+                          "rewardCoins":  20,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "q012",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "syllogism",
+                          "packId":  "daily_mix",
+                          "difficulty":  "medium",
+                          "tags":  [
+                                       "quantifiers"
+                                   ],
+                          "prompt":  "Some puzzles are timed. All timed games are stressful. Which follows?",
+                          "answerFormat":  "single_choice",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "All puzzles are stressful"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "Some puzzles are stressful"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "No puzzles are stressful"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Timed games are never puzzles"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "B"
+                                                              ]
+                                            },
+                          "explanation":  "At least one timed puzzle exists, and timed implies stressful.",
+                          "rewardCoins":  25,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z"
+                      },
+                      {
+                          "id":  "qm001",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "multimedia",
+                          "packId":  "multimedia_logic",
+                          "difficulty":  "easy",
+                          "tags":  [
+                                       "image",
+                                       "pattern"
+                                   ],
+                          "prompt":  "Look at the shape sequence image. Which option should come next?",
+                          "answerFormat":  "single_choice",
+                          "imageUrl":  "https://firebasestorage.googleapis.com/v0/b/trivia-c7406.firebasestorage.app/o/media%2Fqm001-shape-sequence.png?alt=media",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "Circle"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "Omega-like symbol"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "Triangle"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Square"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "B"
+                                                              ]
+                                            },
+                          "explanation":  "The displayed visual clue corresponds to option B in this demo multimedia set.",
+                          "rewardCoins":  25,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z",
+                          "mediaCaption":  "Observe the visual sequence and infer the next shape from rotation and edge count progression.",
+                          "mediaTranscript":  null,
+                          "media":  [
+                                        {
+                                            "type":  "image",
+                                            "url":  "https://firebasestorage.googleapis.com/v0/b/trivia-c7406.firebasestorage.app/o/media%2Fqm001-shape-sequence.png?alt=media",
+                                            "altText":  "Four-step geometric sequence image with one missing final step",
+                                            "caption":  "Sequence clue image for multimedia logic question 1"
+                                        }
+                                    ]
+                      },
+                      {
+                          "id":  "qm002",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "multimedia",
+                          "packId":  "multimedia_logic",
+                          "difficulty":  "medium",
+                          "tags":  [
+                                       "audio",
+                                       "deduction"
+                                   ],
+                          "prompt":  "Listen to the audio pulse and pick the matching pattern description.",
+                          "answerFormat":  "single_choice",
+                          "audioUrl":  "https://firebasestorage.googleapis.com/v0/b/trivia-c7406.firebasestorage.app/o/media%2Fqm002-audio-pattern.mp3?alt=media",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "Single long tone repeated"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "Two short tones then pause"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "Rising pitch sequence"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "Random noise burst"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "C"
+                                                              ]
+                                            },
+                          "explanation":  "The clip demonstrates a rising vocal pattern, matching option C.",
+                          "rewardCoins":  30,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z",
+                          "mediaCaption":  "Audio pattern clue: identify whether the tone rises, repeats, or alternates.",
+                          "mediaTranscript":  "Audio transcript: three short tones with each tone higher than the previous one, then a short pause.",
+                          "media":  [
+                                        {
+                                            "type":  "audio",
+                                            "url":  "https://firebasestorage.googleapis.com/v0/b/trivia-c7406.firebasestorage.app/o/media%2Fqm002-audio-pattern.mp3?alt=media",
+                                            "transcript":  "Three ascending tones, pause, then three ascending tones again."
+                                        }
+                                    ]
+                      },
+                      {
+                          "id":  "qm003",
+                          "version":  1,
+                          "active":  true,
+                          "type":  "multimedia",
+                          "packId":  "multimedia_logic",
+                          "difficulty":  "medium",
+                          "tags":  [
+                                       "video",
+                                       "observation"
+                                   ],
+                          "prompt":  "Watch the short clip and identify the dominant geometric motion.",
+                          "answerFormat":  "single_choice",
+                          "videoUrl":  "https://firebasestorage.googleapis.com/v0/b/trivia-c7406.firebasestorage.app/o/media%2Fqm003-motion-logic.mp4?alt=media",
+                          "options":  [
+                                          {
+                                              "id":  "A",
+                                              "text":  "Linear left-to-right movement"
+                                          },
+                                          {
+                                              "id":  "B",
+                                              "text":  "Radial expansion around center"
+                                          },
+                                          {
+                                              "id":  "C",
+                                              "text":  "Spiral inward rotation"
+                                          },
+                                          {
+                                              "id":  "D",
+                                              "text":  "No visible motion"
+                                          }
+                                      ],
+                          "correctAnswer":  {
+                                                "optionIds":  [
+                                                                  "B"
+                                                              ]
+                                            },
+                          "explanation":  "This demo clip emphasizes outward radial bloom-like expansion, best matched by B.",
+                          "rewardCoins":  30,
+                          "locale":  "en-US",
+                          "createdAt":  "2026-03-05T00:00:00.000Z",
+                          "updatedAt":  "2026-03-05T00:00:00.000Z",
+                          "mediaCaption":  "Video clue: focus on how motion expands from the center.",
+                          "mediaTranscript":  "Video transcript: central object grows outward in radial bursts with repeating expansion cycles.",
+                          "media":  [
+                                        {
+                                            "type":  "video",
+                                            "url":  "https://firebasestorage.googleapis.com/v0/b/trivia-c7406.firebasestorage.app/o/media%2Fqm003-motion-logic.mp4?alt=media",
+                                            "transcript":  "The animation shows repeated outward radial expansion from center to edges."
+                                        }
+                                    ]
+                      }
+                  ]
+}

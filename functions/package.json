@@ -1,0 +1,16 @@
+{
+  "name": "triviaai-functions",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "lint": "node -e \"require('./src/index.js'); console.log('ok')\""
+  },
+  "dependencies": {
+    "firebase-admin": "^13.7.0",
+    "firebase-functions": "^6.0.1"
+  }
+}
