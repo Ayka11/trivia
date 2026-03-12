@@ -1,42 +1,29 @@
-diff --git a/c:\Users\User\Desktop\rewards-challenges-engaging\.github/workflows/azure-deploy.yml b/c:\Users\User\Desktop\rewards-challenges-engaging\.github/workflows/azure-deploy.yml
-new file mode 100644
---- /dev/null
-+++ b/c:\Users\User\Desktop\rewards-challenges-engaging\.github/workflows/azure-deploy.yml
-@@ -0,0 +1,37 @@
-+name: Deploy to Azure Web App
-+
-+on:
-+  push:
-+    branches:
-+      - main
-+  workflow_dispatch:
-+
-+permissions:
-+  contents: read
-+
-+jobs:
-+  build-and-deploy:
-+    runs-on: ubuntu-latest
-+
-+    steps:
-+      - name: Checkout
-+        uses: actions/checkout@v4
-+
-+      - name: Setup Node
-+        uses: actions/setup-node@v4
-+        with:
-+          node-version: "20"
-+          cache: "npm"
-+
-+      - name: Install
-+        run: npm ci
-+
-+      - name: Build
-+        run: npm run build
-+
-+      - name: Deploy to Azure Web App
-+        uses: azure/webapps-deploy@v3
-+        with:
-+          app-name: trivia
-+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-+          package: dist
+name: Deploy to Azure Web App
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: trivia
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: dist
