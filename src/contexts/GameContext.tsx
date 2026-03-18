@@ -45,6 +45,9 @@ interface GameState {
   dailyBonusClaimed: boolean;
   loading: boolean;
   authUser: User | null;
+  showRewardedAd: boolean;
+  showInterstitialAd: boolean;
+  questCompletionCount: number;
 }
 
 interface GameContextType extends GameState {
@@ -66,6 +69,8 @@ interface GameContextType extends GameState {
   refreshProfile: () => Promise<void>;
   xpToNextLevel: number;
   xpProgress: number;
+  setShowRewardedAd: (show: boolean) => void;
+  setShowInterstitialAd: (show: boolean) => void;
 }
 
 const GameContext = createContext<GameContextType | null>(null);
@@ -111,11 +116,17 @@ const DEFAULT_STATE: GameState = {
   dailyBonusClaimed: false,
   loading: true,
   authUser: null,
+  showRewardedAd: false,
+  showInterstitialAd: false,
+  questCompletionCount: 0,
 };
 
 export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [state, setState] = useState<GameState>(DEFAULT_STATE);
   const animationTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [showRewardedAd, setShowRewardedAd] = useState(false);
+  const [showInterstitialAd, setShowInterstitialAd] = useState(false);
+  const [questCompletionCount, setQuestCompletionCount] = useState(0);
 
   const showCoinAnim = useCallback((amount: number) => {
     if (animationTimeout.current) clearTimeout(animationTimeout.current);
@@ -335,11 +346,18 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
     // Optimistic UI update
     const optimisticCoins = quest.coins;
-    setState(s => ({
-      ...s,
-      completedQuestIds: [...s.completedQuestIds, questId],
-      questsCompletedToday: s.questsCompletedToday + 1,
-    }));
+    setState(s => {
+      const newQuestCompletionCount = questCompletionCount + 1;
+      const showInterstitial = newQuestCompletionCount % 3 === 0;
+      return {
+        ...s,
+        completedQuestIds: [...s.completedQuestIds, questId],
+        questsCompletedToday: s.questsCompletedToday + 1,
+        questCompletionCount: newQuestCompletionCount,
+        showRewardedAd: true,
+        showInterstitialAd: showInterstitial,
+      };
+    });
 
     try {
       const { data, error } = await supabase.functions.invoke('complete-quest', {
@@ -518,6 +536,11 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
       refreshProfile,
       xpToNextLevel,
       xpProgress,
+      showRewardedAd,
+      setShowRewardedAd,
+      showInterstitialAd,
+      setShowInterstitialAd,
+      questCompletionCount,
     }}>
       {children}
     </GameContext.Provider>

@@ -1,23 +1,23 @@
 import React from 'react';
 import { useGame } from '@/contexts/GameContext';
-import { OFFERS } from '@/data/rewards';
+import { CPA_OFFERS } from '@/data/rewards';
 import { Coins, Clock, ExternalLink, Shield, TrendingUp, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 
 const OfferWall: React.FC = () => {
   const { earnCoins, isAuthenticated, setShowAuthModal } = useGame();
 
-  const handleOffer = (offer: typeof OFFERS[0]) => {
+  const handleOffer = (offer: typeof CPA_OFFERS[0]) => {
     if (!isAuthenticated) {
       setShowAuthModal(true);
       toast.error('Please sign in to complete offers');
       return;
     }
     // Simulate offer completion (in production, this would redirect to CPA network)
-    toast.info(`Redirecting to ${offer.title}...`);
+    toast.info(`Redirecting to ${offer.title} (${offer.network})...`);
     setTimeout(() => {
-      earnCoins(offer.coins, `Offer: ${offer.title}`);
-      toast.success(`${offer.coins} coins earned from offer!`);
+      earnCoins(offer.coins, `Offer: ${offer.title} (${offer.network})`);
+      toast.success(`${offer.coins} coins earned from offer! (Payout: $${offer.payoutUSD})`);
     }, 2000);
   };
 
@@ -44,7 +44,7 @@ const OfferWall: React.FC = () => {
 
       {/* Offers grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {OFFERS.map(offer => (
+        {CPA_OFFERS.map(offer => (
           <div
             key={offer.id}
             className="bg-slate-800/50 border border-white/5 rounded-2xl p-5 hover:border-emerald-500/30 hover:shadow-xl hover:shadow-emerald-500/5 transition-all duration-300 hover:-translate-y-1 group"
@@ -53,6 +53,8 @@ const OfferWall: React.FC = () => {
               <div>
                 <h3 className="text-white font-bold text-sm mb-1">{offer.title}</h3>
                 <p className="text-slate-400 text-xs">{offer.description}</p>
+                <p className="text-emerald-300 text-xs mt-1 font-semibold">Network: {offer.network}</p>
+                <p className="text-cyan-300 text-xs mt-1">Payout: ${offer.payoutUSD.toFixed(2)} | Coins: {offer.coins}</p>
               </div>
               <div
                 className="shrink-0 ml-3 w-10 h-10 rounded-xl flex items-center justify-center"

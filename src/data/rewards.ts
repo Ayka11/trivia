@@ -1,3 +1,51 @@
+export interface CPAOffer {
+  id: string;
+  title: string;
+  description: string;
+  payoutUSD: number;
+  coins: number;
+  network: string;
+  url: string;
+  color: string;
+  icon: string;
+}
+
+// Example CPA offers (AdGate Media, CPALead, MaxBounty)
+export const CPA_OFFERS: CPAOffer[] = [
+  {
+    id: 'adgate-1',
+    title: 'Sign Up for Free Trial',
+    description: 'Complete a free trial sign-up. High payout!',
+    payoutUSD: 3.5,
+    coins: 700, // 200 coins per $1
+    network: 'AdGate Media',
+    url: 'https://adgate.com/offer/123',
+    color: '#10B981',
+    icon: 'Zap',
+  },
+  {
+    id: 'cpalead-1',
+    title: 'Survey Completion',
+    description: 'Finish a quick survey and earn big rewards.',
+    payoutUSD: 1.2,
+    coins: 240,
+    network: 'CPALead',
+    url: 'https://cpalead.com/offer/456',
+    color: '#06B6D4',
+    icon: 'TrendingUp',
+  },
+  {
+    id: 'maxbounty-1',
+    title: 'App Install',
+    description: 'Install and open the app for instant coins.',
+    payoutUSD: 0.8,
+    coins: 160,
+    network: 'MaxBounty',
+    url: 'https://maxbounty.com/offer/789',
+    color: '#F59E42',
+    icon: 'ExternalLink',
+  },
+];
 export interface Reward {
   id: string;
   title: string;
