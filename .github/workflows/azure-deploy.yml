@@ -7,14 +7,11 @@ on:
 permissions:
   contents: read
   id-token: write
-<<<<<<< HEAD
-=======
-env:
-  AZURE_WEBAPP_NAME: trivia
->>>>>>> b69aa9c0cdec30c535669540b63bd0beb1792782
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      AZURE_WEBAPP_NAME: trivia
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,13 +30,6 @@ jobs:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-<<<<<<< HEAD
-      - name: Deploy to Azure Web App
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: trivia
-          package: dist
-=======
       - name: Configure Azure Web App Settings
         run: |
           az webapp config appsettings set \
@@ -52,4 +42,3 @@ jobs:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
           package: dist
           startup-command: "pm2 serve /home/site/wwwroot --no-daemon --spa --port 8080"
->>>>>>> b69aa9c0cdec30c535669540b63bd0beb1792782
